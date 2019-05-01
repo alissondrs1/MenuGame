@@ -22,7 +22,9 @@ int main() {
     // Example menu for a game:
     MenuTemplate::MenuTemplate MenuA;
 
-    MenuA.Title = "\t\tNEVERWINTER NIGHTS SIMPLE MENU";
+    // Aqui Modifiquei a descrição do Menu (questão 2)
+    MenuA.Title = "\t\tNEVERWINTER NIGHTS SIMPLE MENU
+    ";
     MenuA.Description = "Choose with UP and DOWN, select with RETURN!";
     MenuA.setCursor("> ");
 
@@ -40,4 +42,6 @@ int main() {
     MenuA.setCursorStartPosition(2);
 
     cout << MenuA.displayGetName() << endl;
+    // Aqui Implementei a Chamada da rotina getCursor, a mesma ira exibir a string associada.(Questão 3)
+    cout << "Cursor String type: " << MenuA.getCursor() << endl;
 }
