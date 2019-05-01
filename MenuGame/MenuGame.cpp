@@ -1,14 +1,14 @@
 //!
-//! @file       MenuTemplate.cpp
+//! @file       MenuGame.cpp
 //! @author     Hasenfresser
 //! @version    1.04
 //! @date       2017-12-28
 //!
-//! @brief      Source file of MenuTemplate class.
+//! @brief      Source file of MenuGame class.
 //!
 
 
-#include "MenuTemplate.hpp"
+#include "MenuGame.hpp"
 #include "ExternFunctions/getChar.hpp"
 #include <iostream>
 #include <sstream>
@@ -26,13 +26,13 @@ using std::cin;
 using std::find;
 using std::stringstream;
 
-namespace MenuTemplate {
+namespace MenuGame {
 
-MenuTemplate::MenuTemplate() { }
+MenuGame::MenuGame() { }
 
-MenuTemplate::~MenuTemplate() { }
+MenuGame::~MenuGame() { }
 
-void MenuTemplate::clearScreen() {
+void MenuGame::clearScreen() {
     #if defined LINUX
 
     cout << CLEAR_SCREEN_LINUX;
@@ -48,12 +48,12 @@ void MenuTemplate::clearScreen() {
     #endif
 }
 
-void MenuTemplate::addEntry(const string &Name, const string &Text) {
+void MenuGame::addEntry(const string &Name, const string &Text) {
     // Calling addEntry with new entry at end (position = number of entries) of menu.
     addEntry(Name, Text, Entries.size());
 }
 
-void MenuTemplate::addEntry(const string &Name, const string &Text, const int &Position) {
+void MenuGame::addEntry(const string &Name, const string &Text, const int &Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -82,7 +82,7 @@ void MenuTemplate::addEntry(const string &Name, const string &Text, const int &P
     }
 }
 
-void MenuTemplate::deleteEntry(const string &Name) {
+void MenuGame::deleteEntry(const string &Name) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -105,7 +105,7 @@ void MenuTemplate::deleteEntry(const string &Name) {
     }
 }
 
-void MenuTemplate::deleteEntry(const int &Position) {
+void MenuGame::deleteEntry(const int &Position) {
     try {
         // Testing, if Position to be deleted is valid. If not: exception.
         if(Position < 0 or Position >= Entries.size()) {
@@ -125,7 +125,7 @@ void MenuTemplate::deleteEntry(const int &Position) {
     }
 }
 
-void MenuTemplate::editEntry(const string &Name, const string &Text) {
+void MenuGame::editEntry(const string &Name, const string &Text) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -152,7 +152,7 @@ void MenuTemplate::editEntry(const string &Name, const string &Text) {
     }
 }
 
-void MenuTemplate::editEntry(const string &Name, const int &Position) {
+void MenuGame::editEntry(const string &Name, const int &Position) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -192,7 +192,7 @@ void MenuTemplate::editEntry(const string &Name, const int &Position) {
     }
 }
 
-void MenuTemplate::editEntry(const string &Name, const string &Text, const int &Position) {
+void MenuGame::editEntry(const string &Name, const string &Text, const int &Position) {
     // Calling editEntry with Name and Text.
     editEntry(Name, Text);
 
@@ -200,7 +200,7 @@ void MenuTemplate::editEntry(const string &Name, const string &Text, const int &
     editEntry(Name, Position);
 }
 
-void MenuTemplate::renameEntry(const string &Name, const string &newName) {
+void MenuGame::renameEntry(const string &Name, const string &newName) {
     try {
         // Testing, if Name is empty. If true: exception.
         if(Name.empty())
@@ -237,7 +237,7 @@ void MenuTemplate::renameEntry(const string &Name, const string &newName) {
     }
 }
 
-void MenuTemplate::swapEntries(const string &NameA, const string &NameB) {
+void MenuGame::swapEntries(const string &NameA, const string &NameB) {
     try {
         // Testing, if NameA is empty. If true: exception.
         if(NameA.empty())
@@ -291,7 +291,7 @@ void MenuTemplate::swapEntries(const string &NameA, const string &NameB) {
     }
 }
 
-void MenuTemplate::swapEntries(const string &NameA, const int &PositionB) {
+void MenuGame::swapEntries(const string &NameA, const int &PositionB) {
     try {
         // Testing, if NameA is empty. If true: exception.
         if(NameA.empty())
@@ -341,12 +341,12 @@ void MenuTemplate::swapEntries(const string &NameA, const int &PositionB) {
     }
 }
 
-void MenuTemplate::swapEntries(const int &PositionA, const string &NameB) {
+void MenuGame::swapEntries(const int &PositionA, const string &NameB) {
     // Calling swapEntries with NameB and PositionA.
     swapEntries(NameB, PositionA);
 }
 
-void MenuTemplate::swapEntries(const int &PositionA, const int &PositionB) {
+void MenuGame::swapEntries(const int &PositionA, const int &PositionB) {
     try {
         // Testing, if PositionA is valid. If not: exception.
         if(PositionA < 0 or PositionA >= Entries.size()) {
@@ -386,7 +386,7 @@ void MenuTemplate::swapEntries(const int &PositionA, const int &PositionB) {
     }
 }
 
-void MenuTemplate::setCursor(const string &Cursor) {
+void MenuGame::setCursor(const string &Cursor) {
     try {
         // Testing, if new Cursor equals old Cursor. If true: return.
         if(this->Cursor == Cursor)
@@ -415,7 +415,7 @@ void MenuTemplate::setCursor(const string &Cursor) {
     }
 }
 
-void MenuTemplate::setCursorStartPosition(const int &CursorStartPosition) {
+void MenuGame::setCursorStartPosition(const int &CursorStartPosition) {
     try{
         // Testing, if there are more than one entries. If not: exception.
         if(Entries.size() < 2)
@@ -439,11 +439,11 @@ void MenuTemplate::setCursorStartPosition(const int &CursorStartPosition) {
     }
 }
 
-int MenuTemplate::getCursorStartPosition() {
+int MenuGame::getCursorStartPosition() {
     return CursorStartPosition;
 }
 
-string MenuTemplate::displayGetName() {
+string MenuGame::displayGetName() {
     // Getting selected entry position.
     int Position = displayGetPosition();
 
@@ -455,7 +455,7 @@ string MenuTemplate::displayGetName() {
     return Entries[Position].getName();
 }
 
-int MenuTemplate::displayGetPosition() {
+int MenuGame::displayGetPosition() {
     try {
         // If there are no entries: exception.
         if(Entries.size() == 0)
@@ -515,12 +515,21 @@ int MenuTemplate::displayGetPosition() {
     return -1;
 }
 
-int MenuTemplate::getNumberOfEntries() {
+int MenuGame::getNumberOfEntries() {
     return Entries.size();
 }
 //Aqui implementei a rotina getCursor para que a mesma seja exibida no Main.cpp (questão 3)
 
-string MenuTemplate::getCursor(){
+string MenuGame::getCursor(){
     return this->Cursor;
 } 
+
+// Implementação de metodos (Questão 4)
+void MenuGame::setCursorNumber(const int CursorNumber){
+    this->CursorNumber = CursorNumber;
+}
+
+int MenuGame::getCursorNumber(){
+    return this->CursorNumber;
+}
 } // end namespace

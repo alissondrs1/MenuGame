@@ -1,10 +1,10 @@
 //!
-//! @file       MenuTemplate.hpp
+//! @file       MenuGame.hpp
 //! @author     Hasenfresser
 //! @version    1.04
 //! @date       2017-12-28
 //!
-//! @brief      Header file of MenuTemplate class.
+//! @brief      Header file of MenuGame class.
 //!
 
 // include guard
@@ -20,13 +20,13 @@ using std::string;
 #define LINUX
 
 //!
-//! @namespace  MenuTemplate
+//! @namespace  MenuGame
 //!
-//! @brief      Main namespace of MenuTemplate.
+//! @brief      Main namespace of MenuGame.
 //!
-//! The namespace MenuTemplate contains the class MenuTemplate, the subclass Entry and some definitions.
+//! The namespace MenuGame contains the class MenuGame, the subclass Entry and some definitions.
 //!
-namespace MenuTemplate {
+namespace MenuGame {
 
 // Definitions:
 //!
@@ -53,15 +53,15 @@ const char ENTRY_SELECT = 13;
 #endif // LINUX
 
 //!
-//! @class      MenuTemplate
+//! @class      MenuGame
 //!
-//! @brief      Main class of MenuTemplate.
+//! @brief      Main class of MenuGame.
 //!
 //! A menu contains a dynamic number of entries. Each entry is unique.
 //! The menu itself can be edited.
 //! Entries and their position in the menu can be edited.
 //!
-class MenuTemplate {
+class MenuGame {
 private:
     //!
     //! @class      Entry
@@ -145,6 +145,10 @@ private:
     //!
     string Cursor = "> ";
 
+
+  // int CursorNumber é um atributo criado para a quantidade de char do Cursor
+    int CursorNumber;
+
     //!
     //! @brief      List of all menu entries.
     //!
@@ -174,12 +178,12 @@ private:
     //!
     //! @brief      Default constructor.
     //!
-    MenuTemplate();
+    MenuGame();
 
     //!
     //! @brief      Default destructor.
     //!
-    ~MenuTemplate();
+    ~MenuGame();
 
     //!
     //! @brief      Adds new entry to the menu at the end.
@@ -364,5 +368,10 @@ private:
     //! Size is always a value from 0 to number of entries.
     //!
     int getNumberOfEntries();
+
+    // Aqui defini os tipos de metodos que serão ultilizados em main.cpp e MenuGame.hpp
+    void setCursorNumber(const int CursorNumber);
+
+    int getCursorNumber();
 };
 } // end namespace
