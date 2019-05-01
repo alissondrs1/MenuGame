@@ -22,7 +22,7 @@ int main() {
     // Example menu for a game:
     MenuTemplate::MenuTemplate MenuA;
 
-    MenuA.Title = "\t\tMenuTemplate 1.04";
+    MenuA.Title = "\t\tNEVERWINTER NIGHTS SIMPLE MENU";
     MenuA.Description = "Choose with UP and DOWN, select with RETURN!";
     MenuA.setCursor("> ");
 
