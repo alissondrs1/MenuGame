@@ -317,6 +317,8 @@ private:
     //!
     //! If cursor is empty or contains only spaces, it will not be set.
     //!
+
+    // Aqui fiz a declaração do metdo ASCII ou UINICODE (Questao 5)
     void setCursor(const string &Cursor, const bool isUnicode);
 
     //!

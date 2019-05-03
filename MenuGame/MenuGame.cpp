@@ -386,6 +386,8 @@ void MenuGame::swapEntries(const int &PositionA, const int &PositionB) {
     }
 }
 
+//Aqui defini um novo metodo para a classe MenuGame suportar alem de caracteres ASCII mas tambem em UNICODE (questao 5)
+
 void MenuGame::setCursor(const string &Cursor, const bool isUnicode) {
     try {
         // Testing, if new Cursor equals old Cursor. If true: return.
