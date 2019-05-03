@@ -317,7 +317,7 @@ private:
     //!
     //! If cursor is empty or contains only spaces, it will not be set.
     //!
-    void setCursor(const string &Cursor);
+    void setCursor(const string &Cursor, const bool isUnicode);
 
     //!
     //! @brief      Sets startposition of cursor.

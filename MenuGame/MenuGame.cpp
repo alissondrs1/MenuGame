@@ -386,11 +386,13 @@ void MenuGame::swapEntries(const int &PositionA, const int &PositionB) {
     }
 }
 
-void MenuGame::setCursor(const string &Cursor) {
+void MenuGame::setCursor(const string &Cursor, const bool isUnicode) {
     try {
         // Testing, if new Cursor equals old Cursor. If true: return.
         if(this->Cursor == Cursor)
             return;
+        if(isUnicode)
+            this->Cursor=Cursor;
 
         // Testing, if cursor is emptry. If true: exception.
         if(Cursor.empty())

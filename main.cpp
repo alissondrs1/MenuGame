@@ -25,7 +25,7 @@ int main() {
     // Aqui Modifiquei a descrição do Menu (questão 2)
     MenuA.Title = "\t\tNEVERWINTER NIGHTS SIMPLE MENU";
     MenuA.Description = "Choose with UP and DOWN, select with RETURN!";
-    MenuA.setCursor("> ");
+    MenuA.setCursor("\xe2\x99\xa5 ", 2);
 
     //Tamanho de CursorNumber (Questão 4)
     MenuA.setCursorNumber(MenuA.getCursor().length());
