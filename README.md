@@ -1,4 +1,4 @@
-# MenuTemplate
+# MenuGame
 An easy template for simple menus in Linux and Windows terminals.
 
 
