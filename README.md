@@ -13,7 +13,7 @@ Directive alterada para ``#define LINUX``.
 
 **Descrições detalhadas sobre como as questões foram solucionadas:**
 
-**Q1)** Com a Classe MenuGame declarada como ``MenuA``, utilizei o método ``addEntry`` para a implementação de novas opções em ``main.cpp``.
+**Q1 )** Com a Classe MenuGame declarada como ``MenuA``, utilizei o método ``addEntry`` para a implementação de novas opções em ``main.cpp``.
 
  ***
 
