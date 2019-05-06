@@ -28,7 +28,7 @@ int main() {
     MenuA.Title = "\t\tNEVERWINTER NIGHTS SIMPLE MENU";
     MenuA.Description = "Choose with UP and DOWN, select with RETURN!";
     // Aqui carrega os caracteres em ACII ou Unicode (questao 5).
-    MenuA.setCursor(heart, 1);
+    MenuA.setCursor(heart, true);
 
     //Tamanho de CursorNumber (Questão 4)
     MenuA.setCursorNumber(MenuA.getCursor().length());
@@ -44,7 +44,7 @@ int main() {
 
     MenuA.swapEntries(2, "GAME_OPTIONS");
 
-    MenuA.setCursorStartPosition(2);
+    MenuA.setCursorStartPosition(0);
 
     cout << MenuA.displayGetName() << endl;
     // Aqui Implementei a Chamada da rotina getCursor, a mesma ira exibir o Cursor associado.(Questão 3)
